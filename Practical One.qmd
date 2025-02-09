@@ -9,6 +9,12 @@ if (!requireNamespace("remotes", quietly = TRUE)) {
 }
 remotes::install_github("MiguelRodo/projrsimple")
 
+projrsimple::projr_init()
+
+
+
+projrsimple::projr_run
+
 
 ```{r}
 1 + 1
