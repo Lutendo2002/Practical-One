@@ -1,24 +1,18 @@
 ---
 title: "Practical One"
+type: website
 format: html
+toc: true
+toc-depth: 3
+
 ---
 
 
-if (!requireNamespace("remotes", quietly = TRUE)) {
-  install.packages("remotes")
-}
-remotes::install_github("MiguelRodo/projrsimple")
-
-
-
-
-
-projrsimple::projr_init()
-
-
-```{r}
-
-
-airquality
+```{r, echo=TRUE}
+data <- airquality
 head(airquality)
+
+missing <- is.na(airquality)
+
+missing
 ```
