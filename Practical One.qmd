@@ -1,0 +1,15 @@
+---
+title: "Practical One"
+format: html
+---
+
+
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+remotes::install_github("MiguelRodo/projrsimple")
+
+
+```{r}
+1 + 1
+```
