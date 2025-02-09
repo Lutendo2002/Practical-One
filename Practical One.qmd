@@ -16,3 +16,14 @@ missing <- is.na(airquality)
 
 missing
 ```
+
+```{r echo=TRUE}
+
+#Mean of the temperature
+mean(airquality$Temp)
+
+sd(airquality$Temp)
+min(airquality$Temp)
+max(airquality$Temp)
+```
+
