@@ -7,6 +7,7 @@ toc-depth: 3
 
 ---
 
+install.packages("quarto")
 
 ```{r, echo=TRUE}
 data <- airquality
@@ -19,11 +20,49 @@ missing
 
 ```{r echo=TRUE}
 
-#Mean of the temperature
+# Mean of the temperature
 mean(airquality$Temp)
 
+
+#
 sd(airquality$Temp)
 min(airquality$Temp)
 max(airquality$Temp)
 ```
+```{r echo=FALSE}
+newData <- na.omit(airquality$Ozone)
+mean(newData)
+sd(newData)
+min(newData)
+max(newData)
+
+```
+```{r echo=TRUE}
+
+head(cars)
+
+x_variable <- c(cars$speed)
+int <- rep(1,50)
+int
+x_mat <- cbind(int, x_variable)
+y_mat <- c(cars$dist)
+
+bet <- solve(t(x_mat) %*% x_mat) %*% t(x_mat) %*% y_mat
+bet
+
+
+beta_coeff <- function(s,d) {
+  
+}
+
+
+```
+
+
+```{r}
+
+regression <- lm(dist~speed, data_cars)
+summary(regression)
+```
+
 
