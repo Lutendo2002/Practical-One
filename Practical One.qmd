@@ -7,55 +7,74 @@ toc-depth: 3
 
 ---
 
-install.packages("quarto")
+Question 1
 
 ```{r}
-#| eval: false
+#| echo: true
+#| fig-cap: "Question 1"
 data <- airquality
 head(airquality)
 
+## Elements with true represent the missing elements in the dataset
 missing <- is.na(airquality)
+missing[1:10,]
 
-missing
 ```
+Question 2
 
-```{r echo=TRUE}
+The Summary statistics for the temperature variable
+```{r echo= TRUE}
 
-#| Mean of the temperature
+## Mean of the temperature
 mean(airquality$Temp)
 
-
-#
+## Standard deviation of the temperature
 sd(airquality$Temp)
+
+## The minimum temperature
 min(airquality$Temp)
+
+## The maxiumum temperature
 max(airquality$Temp)
 ```
-```{r echo=FALSE}
+
+
+```{r echo=TRUE}
 newData <- na.omit(airquality$Ozone)
+
+## Mean of the Ozone
 mean(newData)
+
+## Standard deviation of the temperature
 sd(newData)
+
+## The minimum temperature
 min(newData)
+
+## The maxiumum temperature
 max(newData)
 
 ```
-```{r echo=TRUE}
 
-head(cars)
+Question 3
 
-x_variable <- c(cars$speed)
-int <- rep(1,50)
+```{r echo=FALSE}
 
-x_mat <- cbind(int, x_variable)
+beta <- c(cars$speed)
+intercept <- rep(1,50)
+
+x_mat <- cbind(intercept, beta)
 y_mat <- c(cars$dist)
 
-beta <- solve(t(x_mat) %*% x_mat) %*% t(x_mat) %*% y_mat
-beta
+calc <- solve(t(x_mat) %*% x_mat) %*% t(x_mat) %*% y_mat
+calc
 
 ```
 
 
-```{r}
+Question 4
 
+```{r}
 regression <- lm(dist~speed, data = cars)
 summary(regression)
 ```

@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>install.packages(“quarto”)</p>
+<p>Question 1</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> airquality</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(airquality)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -111,232 +111,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5    NA      NA 14.3   56     5   5
 6    28      NA 14.9   66     5   6</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>missing <span class="ot">&lt;-</span> <span class="fu">is.na</span>(airquality)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>missing</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Elements with true represent the missing elements in the dataset</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>missing <span class="ot">&lt;-</span> <span class="fu">is.na</span>(airquality)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>missing[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       Ozone Solar.R  Wind  Temp Month   Day
-  [1,] FALSE   FALSE FALSE FALSE FALSE FALSE
-  [2,] FALSE   FALSE FALSE FALSE FALSE FALSE
-  [3,] FALSE   FALSE FALSE FALSE FALSE FALSE
-  [4,] FALSE   FALSE FALSE FALSE FALSE FALSE
-  [5,]  TRUE    TRUE FALSE FALSE FALSE FALSE
-  [6,] FALSE    TRUE FALSE FALSE FALSE FALSE
-  [7,] FALSE   FALSE FALSE FALSE FALSE FALSE
-  [8,] FALSE   FALSE FALSE FALSE FALSE FALSE
-  [9,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [10,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [11,] FALSE    TRUE FALSE FALSE FALSE FALSE
- [12,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [13,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [14,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [15,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [16,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [17,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [18,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [19,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [20,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [21,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [22,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [23,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [24,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [25,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [26,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [27,]  TRUE    TRUE FALSE FALSE FALSE FALSE
- [28,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [29,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [30,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [31,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [32,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [33,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [34,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [35,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [36,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [37,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [38,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [39,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [40,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [41,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [42,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [43,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [44,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [45,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [46,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [47,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [48,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [49,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [50,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [51,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [52,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [53,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [54,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [55,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [56,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [57,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [58,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [59,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [60,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [61,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [62,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [63,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [64,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [65,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [66,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [67,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [68,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [69,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [70,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [71,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [72,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [73,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [74,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [75,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [76,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [77,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [78,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [79,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [80,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [81,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [82,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [83,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [84,]  TRUE   FALSE FALSE FALSE FALSE FALSE
- [85,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [86,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [87,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [88,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [89,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [90,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [91,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [92,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [93,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [94,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [95,] FALSE   FALSE FALSE FALSE FALSE FALSE
- [96,] FALSE    TRUE FALSE FALSE FALSE FALSE
- [97,] FALSE    TRUE FALSE FALSE FALSE FALSE
- [98,] FALSE    TRUE FALSE FALSE FALSE FALSE
- [99,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[100,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[101,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[102,]  TRUE   FALSE FALSE FALSE FALSE FALSE
-[103,]  TRUE   FALSE FALSE FALSE FALSE FALSE
-[104,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[105,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[106,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[107,]  TRUE   FALSE FALSE FALSE FALSE FALSE
-[108,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[109,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[110,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[111,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[112,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[113,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[114,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[115,]  TRUE   FALSE FALSE FALSE FALSE FALSE
-[116,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[117,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[118,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[119,]  TRUE   FALSE FALSE FALSE FALSE FALSE
-[120,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[121,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[122,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[123,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[124,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[125,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[126,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[127,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[128,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[129,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[130,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[131,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[132,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[133,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[134,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[135,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[136,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[137,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[138,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[139,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[140,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[141,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[142,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[143,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[144,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[145,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[146,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[147,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[148,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[149,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[150,]  TRUE   FALSE FALSE FALSE FALSE FALSE
-[151,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[152,] FALSE   FALSE FALSE FALSE FALSE FALSE
-[153,] FALSE   FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre><code>      Ozone Solar.R  Wind  Temp Month   Day
+ [1,] FALSE   FALSE FALSE FALSE FALSE FALSE
+ [2,] FALSE   FALSE FALSE FALSE FALSE FALSE
+ [3,] FALSE   FALSE FALSE FALSE FALSE FALSE
+ [4,] FALSE   FALSE FALSE FALSE FALSE FALSE
+ [5,]  TRUE    TRUE FALSE FALSE FALSE FALSE
+ [6,] FALSE    TRUE FALSE FALSE FALSE FALSE
+ [7,] FALSE   FALSE FALSE FALSE FALSE FALSE
+ [8,] FALSE   FALSE FALSE FALSE FALSE FALSE
+ [9,] FALSE   FALSE FALSE FALSE FALSE FALSE
+[10,]  TRUE   FALSE FALSE FALSE FALSE FALSE</code></pre>
 </div>
 </div>
+<p>Question 2</p>
+<p>The Summary statistics for the temperature variable</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| Mean of the temperature</span></span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Mean of the temperature</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(airquality<span class="sc">$</span>Temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 77.88235</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Standard deviation of the temperature</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(airquality<span class="sc">$</span>Temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9.46527</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(airquality<span class="sc">$</span>Temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The minimum temperature</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(airquality<span class="sc">$</span>Temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 56</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(airquality<span class="sc">$</span>Temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The maxiumum temperature</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(airquality<span class="sc">$</span>Temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 97</code></pre>
 </div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>newData <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(airquality<span class="sc">$</span>Ozone)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Mean of the Ozone</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(newData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 42.12931</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Standard deviation of the temperature</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(newData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 32.98788</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The minimum temperature</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(newData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## The maxiumum temperature</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(newData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 168</code></pre>
 </div>
 </div>
+<p>Question 3</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  speed dist
-1     4    2
-2     4   10
-3     7    4
-4     7   22
-5     8   16
-6     9   10</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x_variable <span class="ot">&lt;-</span> <span class="fu">c</span>(cars<span class="sc">$</span>speed)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>int <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">50</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-[39] 1 1 1 1 1 1 1 1 1 1 1 1</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x_mat <span class="ot">&lt;-</span> <span class="fu">cbind</span>(int, x_variable)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>y_mat <span class="ot">&lt;-</span> <span class="fu">c</span>(cars<span class="sc">$</span>dist)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(x_mat) <span class="sc">%*%</span> x_mat) <span class="sc">%*%</span> <span class="fu">t</span>(x_mat) <span class="sc">%*%</span> y_mat</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>beta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                 [,1]
-int        -17.579095
-x_variable   3.932409</code></pre>
+<pre><code>                [,1]
+intercept -17.579095
+beta        3.932409</code></pre>
 </div>
 </div>
+<p>Question 4</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist<span class="sc">~</span>speed, <span class="at">data =</span> cars)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>regression <span class="ot">&lt;-</span> <span class="fu">lm</span>(dist<span class="sc">~</span>speed, <span class="at">data =</span> cars)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
